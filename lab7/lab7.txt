@@ -1,0 +1,9 @@
+The dup() system call creates a copy of a file descriptor.
+
+It uses the lowest-numbered unused descriptor for the new descriptor.
+If the copy is successfully created, then the original and copy file descriptors may be used interchangeably.
+They both refer to the same open file description and thus share file offset and file status flags.
+
+The dup2() system call is similar to dup() but the basic difference between them is that instead of using the lowest-numbered unused file descriptor, it uses the descriptor number specified by the user.
+
+The const char *arg and subsequent ellipses in the execl(), execlp(), and execle() functions can be thought of as arg0, arg1, ..., argn. Together they describe a list of one or more pointers to null-terminated strings that represent the argument list available to the executed program. The first argument, by convention, should point to the filename associated with the file being executed. The list of arguments must be terminated by a NULL pointer, and, since these are variadic functions, this pointer must be cast (char *) NULL.

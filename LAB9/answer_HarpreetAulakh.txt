@@ -1,0 +1,14 @@
+What is the difference between synchronous and asynchronous communication?
+
+There are a few differences between synchronous and asynchronous communication. 
+The main difference is that synchronous communications happen in the moment, meaning that it’s faster and more dynamic. 
+This means that it’s also good for participation and active discussions with smaller groups.
+Conversely, asynchronous communication happens over a period of time, so there’s no need to schedule anything. 
+You can go at your own pace, without as many disruptions. 
+
+
+Do you prefer socket reads in a receive thread or do you prefer both socket read and write to be in the main() function? Why?
+
+Sockets are not thread safe, because operations included in sockets are not atomic, which means socket read and write operations are independant. And if socket reads
+are done in threads, there will be close() functions as well in those threads which creates the possibility of attempting to run close() operation multiple times, 
+which may cause complications related to file descriptor errors.
